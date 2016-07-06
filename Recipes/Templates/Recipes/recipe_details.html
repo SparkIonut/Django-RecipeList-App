@@ -1,0 +1,24 @@
+{% extends 'Recipes/base.html' %}
+
+{% block content %}
+    <div class="post">
+        <h2>{{ recipe.Recipe_Title }}</h2>
+        <div class="date">
+            <b><i>Date: </i></b>{{ recipe.Recipe_Date }}
+        </div>
+        <div class="author">
+        	<b><i>Written by:</i></b> {{ recipe.Recipe_Owner }}
+        </div>
+        <div class="ingredients">
+        	<b><i>Ingredients:</i></b>
+        	<p>{{ recipe.Recipe_Ingredients|linebreaksbr }}</p>
+        </div>
+        <div class="description">
+        	<b><i>Description of process:</i></b>
+        	<p>{{ recipe.Recipe_Description|linebreaksbr }}</p>
+        </div>
+        {% if user.is_authenticated %}
+            <a href="{% url 'recipe_edit' pk=recipe.pk %}" class="btn btn-info">Edit</a>
+        {% endif %}
+    </div>
+{% endblock %}

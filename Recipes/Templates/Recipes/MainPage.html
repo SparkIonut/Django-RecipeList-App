@@ -1,0 +1,14 @@
+{% extends 'Recipes/base.html' %}
+
+{% block content %}
+	{% for recipe in recipes %}       
+	    <div class="boxed">
+		    <div class="recipe-group">
+		        <h3><a href="{% url 'recipe_details' recipe_title=recipe.pk %}">{{ recipe.Recipe_Title }}</a></h3>
+		        <p>{{ recipe.Recipe_Owner }}</p>
+		        <p>Date published: {{ recipe.Recipe_Date }}</p>
+		        <p>Tags: {{ recipe.Recipe_Tags|linebreaksbr }}</p>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}

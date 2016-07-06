@@ -1,0 +1,70 @@
+h1
+{
+  margin-top: -25px;
+  margin-left: 25px;
+}
+h1, h2
+{
+    color: #FCA205;
+    font-family: 'Georgia';
+}
+
+h3, h2
+{   
+    color: #3366ff;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 10px;
+}
+body
+{
+  background-color: #e6fff7;
+}
+
+.page-header
+{
+  background-color: #ff9400;
+}
+.page-header {
+    background-color: #b84dff;
+    margin-top: 25px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.page-content
+{   margin-left: 30px;
+
+}
+.page-title
+{
+  margin-top: 0px;
+  color: #3366ff;
+  margin-bottom: 20px;
+}
+.author
+{
+	margin-bottom: 30px;
+}
+.ingredients
+{
+	margin-bottom: 30px;
+}
+.boxed 
+{
+  border: 1px solid blue;
+  margin-bottom: 10px;
+  margin-right: 160px;
+}
+.recipe-group
+{
+	margin-left: 20px;
+}
+.right {
+    float: right;
+    margin-top: -40px;
+    margin-right: 25px;
+}
