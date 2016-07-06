@@ -38,3 +38,6 @@ def recipe_edit(request, pk):
     else:
         form = RecipeForm(instance=recipe)
     return render(request, 'Recipes/recipe_edit.html', {'form': form,})
+
+def test_hero(request):
+    return render(request, 'Hero/blog-simple.html')

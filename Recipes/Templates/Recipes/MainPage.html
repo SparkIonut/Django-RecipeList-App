@@ -4,9 +4,9 @@
 	{% for recipe in recipes %}       
 	    <div class="boxed">
 		    <div class="recipe-group">
-		        <h3><a href="{% url 'recipe_details' recipe_title=recipe.pk %}">{{ recipe.Recipe_Title }}</a></h3>
-		        <p>{{ recipe.Recipe_Owner }}</p>
-		        <p>Date published: {{ recipe.Recipe_Date }}</p>
+		        <h3><a href="{% url 'recipe_details' recipe_title=recipe.pk %}">{{ recipe.Recipe_Title }} </a><small>{{ recipe.Recipe_Date }}</small></h3>
+		        <a href="#">{{ recipe.Recipe_Owner }}</a>
+		        <img class="thumbnail" src="http://placehold.it/850x350">
 		        <p>Tags: {{ recipe.Recipe_Tags|linebreaksbr }}</p>
 			</div>
 		</div>

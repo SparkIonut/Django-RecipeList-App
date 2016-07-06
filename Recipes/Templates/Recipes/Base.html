@@ -1,26 +1,52 @@
 {% load staticfiles %}
-<html>
-	<head>
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="{% static 'css/Recipe.css' %}">
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Recipes for your taste.</title>
+      <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+      <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 
-		<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-	</head>
-	<body>
-		<div class="page-header">
-			<h1><a href="{% url 'recipe_list' %}">Recipes</a></h1>
-			{% if user.is_authenticated %}
-				<div class="right">
-					<a href="{% url 'recipe_add' %}" class="btn btn-warning">Add Recipe</span></a>
-				</div>
+      <link rel="stylesheet" href="{% static 'css/Recipe.css' %}">
+
+      <script>
+        $(document).foundation();
+      </script>
+    </head>
+    <body>
+
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+        	<li class="menu-text"><h3><a href="{% url 'recipe_list' %}">Recipes</a></h3></li>
+	        {% if user.is_authenticated %}
+				<li><a href="{% url 'recipe_add' %}">Add Recipe</span></a></li>
 			{% endif %}
-		</div>
-		<div class="page-content">
-			<div class="content container">
-    	    	{% block content %}
-        		{% endblock %}
-	    	</div>
-	    </div>
-	</body>
+        </ul>
+      </div>
+    </div>
+    <!-- End Top Bar -->
+
+    <div class="callout large primary">
+      <div class="row column text-center">
+        <h1 style="font-family: Lobster">Recipes Online</h1>
+        <p class="subheader" style="font-family: Lobster">Finding the best cuisine dishes for you.</p>
+      </div>
+    </div>
+    
+    <!-- We can now combine rows and columns when there's only one column in that row -->
+    <div class="row medium-8 large-7 columns">
+      <div class="blog-post">
+            {% block content %}
+            {% endblock %}
+      </div>
+    </div>
+  </body>
 </html>
+
+
+    
